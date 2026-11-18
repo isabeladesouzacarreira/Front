@@ -1,162 +1,120 @@
-@import url('https://googleapis.com');
-
-:root {
-    --azul-petroleo: #083C51;
-    --dourado-areia: #A28F6A;
-    --azul-teal: #3F7D8C;
-    --off-white: #E5E2DD;
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+  margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #f2f0ed 0%, var(--off-white) 100%);
-    overflow: hidden;
-    position: relative;
+  background-color: #fff0f5;
+  color: #111111;
+  line-height: 1.5;
 }
 
-body::before,
-body::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    z-index: 0;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: #111111;
 }
 
-body::before {
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle, var(--azul-teal), var(--azul-petroleo));
-    top: 8%;
-    left: 28%;
-    filter: blur(20px);
-    opacity: 0.85;
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
 }
 
-body::after {
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, var(--dourado-areia), var(--azul-petroleo));
-    bottom: 8%;
-    right: 28%;
-    filter: blur(30px);
-    opacity: 0.75;
+nav a {
+  text-decoration: none;
+  color: #ffc2d4;
+  font-weight: bold;
 }
 
-.login-container {
-    width: 100%;
-    max-width: 420px;
-    padding: 20px;
-    z-index: 1;
+nav a:hover {
+  color: #ffffff;
 }
 
-.login-card {
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    padding: 45px 35px;
-    box-shadow: 0 15px 35px rgba(8, 60, 81, 0.12);
-    text-align: center;
+.secao {
+  padding: 50px 8%;
+  border-bottom: 2px solid #f7cad8;
 }
 
-.login-card h1 {
-    color: var(--azul-petroleo);
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 8px;
+#sobre {
+  background-color: #ffe3ec;
 }
 
-.subtitle {
-    color: var(--azul-teal);
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 32px;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #111111;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    text-align: left;
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: #111111;
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+h3 {
+  margin-bottom: 8px;
+  color: #111111;
 }
 
-.input-group label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--azul-petroleo);
-    margin-left: 4px;
+p {
+  margin-bottom: 10px;
+  color: #333333;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 14px 16px;
-    border-radius: 10px;
-    border: 1px solid rgba(8, 60, 81, 0.15);
-    background: rgba(255, 255, 255, 0.85);
-    color: var(--azul-petroleo);
-    font-size: 15px;
-    outline: none;
-    transition: all 0.3s ease;
+.grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.input-group input:focus {
-    background: #ffffff;
-    border-color: var(--azul-teal);
-    box-shadow: 0 0 0 3px rgba(63, 125, 140, 0.2);
+/* Caixas (Cards) */
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 2px solid #111111;
+  border-radius: 10px;
 }
 
-button[type="submit"] {
-    margin-top: 10px;
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--azul-petroleo);
-    color: var(--off-white);
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 15px rgba(8, 60, 81, 0.25);
+.card a,
+#contato a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #111111;
+  color: #ffc2d4;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
 }
 
-button[type="submit"]:hover {
-    background-color: var(--azul-teal);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(63, 125, 140, 0.35);
+.card a:hover,
+#contato a:hover {
+  background-color: #333333;
+  color: #ffffff;
 }
 
-button[type="submit"]:active {
-    transform: translateY(0);
+.midia {
+  height: 150px;
+  background-color: #ffc2d4;
+  border: 1px solid #111111;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #111111;
 }
 
-@media (max-width: 480px) {
-    body::before {
-        left: -10%;
-        top: 5%;
-    }
-    body::after {
-        right: -10%;
-        bottom: 5%;
-    }
-    .login-card {
-        padding: 35px 25px;
-    }
+@media (max-width: 768px) {
+  .grade {
+    grid-template-columns: 1fr;
+  }
 }
